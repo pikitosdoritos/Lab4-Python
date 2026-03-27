@@ -56,3 +56,11 @@ import random
 list_2 = list(random.randint(-7, 7) for _ in range(10))
 
 print(f"Список з 10 випадкових цілих чисел із діапазону [-7,7]: {list_2}\n")
+
+min_item = min(list_2)
+max_item = max(list_2)
+
+print(f"Мінімальний елемент списку: {min_item}\n")
+print(f"Максимальний елемент списку: {max_item}\n")
+print(f"Довжина списку: {len(list_2)}\n")
+print(f"Сума елементів списку: {sum(list_2)}\n")
