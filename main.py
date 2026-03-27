@@ -137,3 +137,44 @@ print(f"Літери у верхньому регістрі: {letters_upper}\n")
 
 letters_upper_map = list(map(str.upper, filter(lambda x: isinstance(x, str) and x.isalpha(), list_3)))
 print(f"Літери у верхньому регістрі (map/filter): {letters_upper_map}\n")
+
+# 5
+# Сформувати список з list_5 із 12 елементів: 8 цілих чисел та 4-х рядків.
+# На основі цього списку створити інший список list_6 з 8 числових
+# елементів, в якому кожен елемент дорівнює середньоарифметичному усіх
+# наступних числових елементів списку list_5 (з точністю до двох знаків).
+# Наприклад list_1 = [1, 1, “ASbvsxT”, 2, 4, “A”, -1, „qq‟, 7, 2, 0, “qweT”].
+# На виході маємо
+# list_2 =[2.00, 2.14, 2.33, 2.40, 2.00, 3.00, 1.00, 0.00].
+# Другий елемент (2.14) - це середньоарифметичне чисел 1, 2, 4, -1, 7, 2, 0.
+# Шостий елемент 3.00 - середньоарифметичне чисел (7, 2, 0)
+# На основі list_5 створити список рядків, та вивести рядки з довжиною
+# більше 2.
+
+print("==" * 80 + "\n")
+print("Завдання 5\n")
+print("==" * 80 + "\n")
+
+list_5 = [1, 1, "ASbvsxT", 2, 4, "A", -1, "qq", 7, 2, 0, "qweT"]
+
+print(f"Початковий список list_5: {list_5}\n")
+
+numbers = [x for x in list_5 if isinstance(x, int)]
+
+list_6 = []
+
+for i in range(len(numbers)):
+    tail = numbers[i+1:]
+    if tail:
+        avg = round(sum(tail) / len(tail), 2)
+    else:
+        avg = 0.00
+    list_6.append(avg)
+
+print(f"Список list_6 (середні значення): {list_6}\n")
+
+strings = [x for x in list_5 if isinstance(x, str)]
+print(f"Список рядків: {strings}\n")
+
+long_strings = [x for x in strings if len(x) > 2]
+print(f"Рядки з довжиною більше 2: {long_strings}\n")
