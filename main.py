@@ -53,7 +53,7 @@ print("==" * 80 + "\n")
 
 import random
 
-list_2 = list(random.randint(-7, 7) for _ in range(10))
+list_2 = [random.randint(-7, 7) for _ in range(10)]
 
 print(f"Список з 10 випадкових цілих чисел із діапазону [-7,7]: {list_2}\n")
 
@@ -64,3 +64,14 @@ print(f"Мінімальний елемент списку: {min_item}\n")
 print(f"Максимальний елемент списку: {max_item}\n")
 print(f"Довжина списку: {len(list_2)}\n")
 print(f"Сума елементів списку: {sum(list_2)}\n")
+print(f"Індекс мінімального елемента: {list_2.index(min_item)}\n")
+print(f"Індекс максимального елемента: {list_2.index(max_item)}\n")
+
+list_2[list_2.index(min_item)] = max_item
+list_2[list_2.index(max_item)] = min_item
+
+print(f"Поміняти місцями максимальний та мінімальний елементи: {list_2}\n")
+
+sorted_list = sorted(list_2)
+
+print(f"Відсортована копія списку: {sorted_list}\n")
