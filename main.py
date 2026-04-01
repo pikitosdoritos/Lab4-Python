@@ -138,7 +138,7 @@ print(f"Літери у верхньому регістрі: {letters_upper}\n")
 letters_upper_map = list(map(str.upper, filter(lambda x: isinstance(x, str) and x.isalpha(), list_3)))
 print(f"Літери у верхньому регістрі (map/filter): {letters_upper_map}\n")
 
-# 5
+# Завдання №5
 # Сформувати список з list_5 із 12 елементів: 8 цілих чисел та 4-х рядків.
 # На основі цього списку створити інший список list_6 з 8 числових
 # елементів, в якому кожен елемент дорівнює середньоарифметичному усіх
